@@ -6,7 +6,7 @@ class TransactionsController
 {
   public function index(Request $request, Response $response, $args){
     $mysqli_connection = new MySQLi('my_mariadb', 'root', 'ciccio', 'bank');
-    $result = $mysqli_connection->query("SELECT * FROM alunni");
+    $result = $mysqli_connection->query("SELECT * FROM transactions");
     $results = $result->fetch_all(MYSQLI_ASSOC);
 
     $response->getBody()->write(json_encode($results));
