@@ -12,4 +12,6 @@ class TransactionsController
     $response->getBody()->write(json_encode($results));
     return $response->withHeader("Content-type", "application/json")->withStatus(200);
   }
+
+  public function get()
 }
